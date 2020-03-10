@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Behaviors="clr-namespace:LocalDatabaseSample.Behaviors"
+             mc:Ignorable="d"
+             x:Class="GemeindeJubiläen.Views.ItemsPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <StackLayout>
+        <Grid Padding="40" BackgroundColor="LightGray" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Status" FontSize="Medium" Grid.Column="3" Grid.Row="0"/>
+            <Button x:Name="NewGemeindeglied" Text="{Binding newItem.Status}" Clicked="StatusClicked" Grid.Column="3" Grid.Row="1"  BackgroundColor="White"/>
+            <Label  Text="Name" FontSize="Medium" Grid.Column="0" Grid.Row="0"/>
+            <Entry x:Name="NewName" Text="{Binding newItem.Name}" FontSize="Small" Grid.Column="0" Grid.Row="1"/>
+            <Label  Text="Geburtstag" FontSize="Medium" Grid.Column="1" Grid.Row="0" />
+            <Entry x:Name="NewGeb" Text="{Binding newItem.Geburtsdatum}" Placeholder="TT.MM.JJJJ" FontSize="Small" Margin="0" Grid.Column="1" Grid.Row="1">
+                <Entry.Behaviors>
+                    <Behaviors:MaskedBehavior Mask="XX.XX.XXXX" />
+                </Entry.Behaviors>
+            </Entry>
+            <Label Text="Taufdatum" FontSize="Medium" Grid.Column="2" Grid.Row="0"/>
+            <Entry x:Name="NewTauf" Text="{Binding newItem.Taufdatum}" Placeholder="TT.MM.JJJJ" FontSize="Small" Margin="0" Grid.Column="2" Grid.Row="1">
+                <Entry.Behaviors>
+                    <Behaviors:MaskedBehavior Mask="XX.XX.XXXX" />
+                </Entry.Behaviors>
+            </Entry>
+            <Button Text="Speichern" Clicked="Hinzufügen_Clicked" Grid.Column="4" Grid.Row="0" BackgroundColor="LightGreen"/>
+            <Button Text="Zurücksetzen" Clicked="Zurücksetzen_Clicked" Grid.Column="4" Grid.Row="1"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Status" FontSize="20" Grid.Column="3" FontAttributes="Bold" TextColor="#1690F4"/>
+            <Label Text="Name" FontSize="20" Grid.Column="0" FontAttributes="Bold" TextColor="#1690F4"/>
+            <Label Text="Geburtsdatum" FontSize="20" Grid.Column="1" FontAttributes="Bold" TextColor="#1690F4"/>
+            <Label Text="Taufdatum" FontSize="20" Grid.Column="2" FontAttributes="Bold" TextColor="#1690F4"/>
+        </Grid>
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RetainElement">
+            <d:ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                </x:Array>
+            </d:ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid Padding="10" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Status}" Grid.Column="3"/>
+                                <Label Text="{Binding Name}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" Grid.Column="0"/>
+                                <Label Text="{Binding Geburtsdatum}" 
+                                d:Text="Name"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" Grid.Column="1"/>
+                                <Label Text="{Binding Taufdatum}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" Grid.Column="2"/>
+
+                                <Button Text="Bearbeiten" Clicked="Bearbeiten_Clicked" Grid.Column="4" BackgroundColor="LightGray"/>
+                                <Button Text="Löschen" Clicked="Löschen_Clicked" Grid.Column="5" BackgroundColor="OrangeRed"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
