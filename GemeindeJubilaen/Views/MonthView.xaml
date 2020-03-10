@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Behaviors="clr-namespace:LocalDatabaseSample.Behaviors"
+             mc:Ignorable="d"
+             x:Class="GemeindeJubiläen.Views.MonthView"
+             Title="Monatsübersicht"
+             x:Name="BrowseItemsPage">
+
+    <StackLayout>
+        <Grid Padding="10" BackgroundColor="LightGray" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Text="⯇" FontSize="25" Clicked="Previous_Clicked"/>
+            <Label x:Name="Monatsname" FontSize="50" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <Button Text="⯈" FontSize="25" Clicked="Next_Clicked" Grid.Column="4"/>
+        </Grid>
+       
+        <Grid>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <BoxView HorizontalOptions="FillAndExpand" WidthRequest="2" Color="#1690F4" Grid.Column="1" Grid.RowSpan="4"/>
+            <BoxView VerticalOptions="FillAndExpand" HeightRequest="2" Color="#1690F4" Grid.Row="1" Grid.ColumnSpan="3"/>
+
+            <Label Text="Geburtstage" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="0"/>
+            <Label Text="Taufjubiläum" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="2"/>
+
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Status" FontSize="18" Grid.Column="2" FontAttributes="Bold" TextColor="#1690F4"/>
+                <Label Text="Name" FontSize="18" Grid.Column="0" FontAttributes="Bold" TextColor="#1690F4"/>
+                <Label Text="Geburtsdatum" FontSize="18" Grid.Column="1" FontAttributes="Bold" TextColor="#1690F4"/>
+                <Label Text="Alter" FontSize="18" Grid.Column="3" FontAttributes="Bold" TextColor="#1690F4"/>
+            </Grid>
+
+            <ListView x:Name="GeburtstagsListView"
+                ItemsSource="{Binding Geburtstagskinder}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RetainElement"
+                Grid.Row ="3" Grid.Column="0">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="LightGray" Grid.Column="1" Grid.RowSpan="4"/>
+                                <Grid Padding="10" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Status}" Grid.Column="2"/>
+                                    <Label Text="{Binding Alter}" Grid.Column="3"/>
+                                    <Label Text="{Binding Name}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" Grid.Column="0"/>
+                                    <Label Text="{Binding Geburtsdatum}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTe}"
+                                FontSize="16" Grid.Column="1" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Status" FontSize="18" Grid.Column="2" FontAttributes="Bold" TextColor="#1690F4"/>
+                <Label Text="Name" FontSize="18" Grid.Column="0" FontAttributes="Bold" TextColor="#1690F4"/>
+                <Label Text="Taufdatum" FontSize="18" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="#1690F4"/>
+                <Label Text="JubNr." FontSize="18" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" TextColor="#1690F4"/>
+            </Grid>
+
+            <ListView x:Name="TaufListView"
+                ItemsSource="{Binding Taufkinder}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RetainElement"
+                Grid.Row ="3" Grid.Column="2">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                    </x:Array>
+                </d:ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="LightGray" Grid.Column="1" Grid.RowSpan="4"/>
+                                <Grid Padding="10" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Status}" Grid.Column="2"/>
+                                    <Label Text="{Binding JubNr}" Grid.Column="3"/>
+                                    <Label Text="{Binding Name}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" Grid.Column="0" />
+                                    <Label Text="{Binding Taufdatum}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" Grid.Column="1"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
