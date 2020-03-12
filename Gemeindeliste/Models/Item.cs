@@ -7,6 +7,7 @@ namespace Gemeindeliste.Models
     {
         Gemeindeglied,
         Besucher,
+        Interessierter,
         Kind
     }
     public class Item : ICloneable

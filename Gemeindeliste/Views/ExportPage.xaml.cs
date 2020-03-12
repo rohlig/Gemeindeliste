@@ -23,8 +23,8 @@ namespace Gemeindeliste.Views
                 Button b = new Button();
                 b.Text = ((Monate)(i)).ToString();
                 b.Clicked += Button_Clicked;
-                b.FontSize = 15;
-                MonatsGrid.Children.Add(b, i % 3, i / 3);
+                b.FontSize = 18;
+                MonatsGrid.Children.Add(b, i / 3, i % 3);
                 buttonList.Add(b);
             }
             for (int i = 0; i < Enum.GetValues(typeof(Status)).Length; i++)
@@ -33,8 +33,8 @@ namespace Gemeindeliste.Views
                 b.Text = ((Status)(i)).ToString();
                 b.Clicked += Button_Clicked;
                 b.BackgroundColor = Color.LightGreen;
-                b.FontSize = 15;
-                StatusGrid.Children.Add(b, i % 3, i / 3);
+                b.FontSize = 18;
+                StatusGrid.Children.Add(b, i % 4, i / 4);
                 buttonList.Add(b);
             }
         }
@@ -114,20 +114,20 @@ namespace Gemeindeliste.Views
         {
             MonatsButton.BackgroundColor = GemVorButton.BackgroundColor = GemNachButton.BackgroundColor = Color.LightGray;
             (sender as Button).BackgroundColor = Color.LightGreen;
-            if ((sender as Button) == MonatsButton){
-                for(int i=0; i < 12; i++)
+            if ((sender as Button) == MonatsButton)
+            {
+                for (int i = 0; i < 12; i++)
                 {
-                    buttonList[i].IsEnabled = true;
-                    GebButton.IsEnabled = TaufButton.IsEnabled = BeidButton.IsEnabled = true;
-
+                    buttonList[i].IsVisible = true;
                 }
+                GebButton.IsVisible = TaufButton.IsVisible = BeidButton.IsVisible = MonatsLabel.IsVisible = InhaltsLabel.IsVisible = true;
             }
             else
             {
                 for (int i = 0; i < 12; i++)
                 {
-                    buttonList[i].IsEnabled = false;
-                    GebButton.IsEnabled = TaufButton.IsEnabled = BeidButton.IsEnabled = false;
+                    buttonList[i].IsVisible = false;
+                    GebButton.IsVisible = TaufButton.IsVisible = BeidButton.IsVisible = MonatsLabel.IsVisible = InhaltsLabel.IsVisible = false;
 
                 }
             }

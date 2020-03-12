@@ -9,7 +9,7 @@
   <Identity
     Name="1a01de54-0ad3-4807-bba9-92cc6bd7d9a6"
     Publisher="CN=Ruben Ohlig"
-    Version="1.5.1.0" />
+    Version="2.0.6.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -37,7 +37,7 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="GemeindeJubiläen.UWP"
         BackgroundColor="transparent">
-        <uap:DefaultTile Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Gemeindeliste">
+        <uap:DefaultTile Square71x71Logo="Assets\SmallTile.png" Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Gemeindeliste" Square310x310Logo="Assets\LargeTile.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png"  BackgroundColor="blue"/>
         <uap:InitialRotationPreference>
