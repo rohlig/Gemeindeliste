@@ -8,9 +8,6 @@
              x:Class="Gemeindeliste.Views.MonthView"
              Title="Monatsübersicht"
              x:Name="BrowseItemsPage">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Export" Clicked="Export_Clicked"/>
-    </ContentPage.ToolbarItems>
     <StackLayout>
         <Grid Padding="10" BackgroundColor="LightGray" ColumnSpacing="10">
             <Grid.ColumnDefinitions>

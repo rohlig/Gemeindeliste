@@ -6,8 +6,11 @@
              mc:Ignorable="d"
              Title="Export"
              x:Class="Gemeindeliste.Views.ExportPage">
-  <ContentPage.Content>
-      <StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="hidden Aboutpage :)" Clicked="About_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
             <Label Text="Export Art" FontSize="Header" HorizontalOptions="Center"/>
             <Grid>
                 <Grid.ColumnDefinitions>

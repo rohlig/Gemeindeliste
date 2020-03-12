@@ -132,5 +132,10 @@ namespace Gemeindeliste.Views
                 }
             }
         }
+
+        private void About_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new AboutPage());
+        }
     }
 }
