@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GemeindeJubiläen.ViewModels
+namespace Gemeindeliste.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {

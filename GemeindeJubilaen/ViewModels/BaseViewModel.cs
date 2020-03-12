@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-using GemeindeJubiläen.Models;
-using GemeindeJubiläen.Services;
+using Gemeindeliste.Models;
+using Gemeindeliste.Services;
 
-namespace GemeindeJubiläen.ViewModels
+namespace Gemeindeliste.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

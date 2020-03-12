@@ -3,11 +3,11 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using GemeindeJubiläen.Models;
+using Gemeindeliste.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GemeindeJubiläen.ViewModels
+namespace Gemeindeliste.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {

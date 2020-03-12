@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Linq;
 using Xamarin.Forms;
-using GemeindeJubiläen.Models;
-using GemeindeJubiläen.ViewModels;
+using Gemeindeliste.Models;
+using Gemeindeliste.ViewModels;
 
-namespace GemeindeJubiläen.Views
+namespace Gemeindeliste.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

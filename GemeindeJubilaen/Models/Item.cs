@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System;
 
-namespace GemeindeJubiläen.Models
+namespace Gemeindeliste.Models
 {
     public enum Status
     {

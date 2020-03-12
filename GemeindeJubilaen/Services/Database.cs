@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using SQLite;
 
-namespace GemeindeJubiläen.Models
+namespace Gemeindeliste.Models
 {
     public class Database
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Xamarin.Forms;
 
-namespace GemeindeJubiläen.Views
+namespace Gemeindeliste.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

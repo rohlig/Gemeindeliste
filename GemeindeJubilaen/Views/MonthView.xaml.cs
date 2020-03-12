@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using Xamarin.Forms;
-using GemeindeJubiläen.Models;
-using GemeindeJubiläen.ViewModels;
+using Gemeindeliste.Models;
+using Gemeindeliste.ViewModels;
 using GemeindeJubilaen.Services;
 using Xamarin.Essentials;
 using System.IO;
 
-namespace GemeindeJubiläen.Views
+namespace Gemeindeliste.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

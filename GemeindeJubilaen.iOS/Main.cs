@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace GemeindeJubiläen.iOS
+namespace Gemeindeliste.iOS
 {
     public class Application
     {

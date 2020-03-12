@@ -1,4 +1,4 @@
-﻿using GemeindeJubiläen.Models;
+﻿using Gemeindeliste.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Kernel.Font;
 using iText.Layout.Borders;
-using GemeindeJubiläen.Views;
+using Gemeindeliste.Views;
 using System.Linq;
 using iText.Kernel.Colors;
 

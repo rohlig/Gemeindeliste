@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GemeindeJubiläen.Services
+namespace Gemeindeliste.Services
 {
     public interface IDataStore<T>
     {

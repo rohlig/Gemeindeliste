@@ -1,10 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using GemeindeJubiläen.Services;
-using GemeindeJubiläen.Views;
+using Gemeindeliste.Services;
+using Gemeindeliste.Views;
 
-namespace GemeindeJubiläen
+namespace Gemeindeliste
 {
     public partial class App : Application
     {

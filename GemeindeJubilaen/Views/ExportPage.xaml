@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Export"
-             x:Class="GemeindeJubiläen.Views.ExportPage">
+             x:Class="Gemeindeliste.Views.ExportPage">
   <ContentPage.Content>
       <StackLayout>
             <Label Text="Inhalt" FontSize="Header" HorizontalOptions="Center"/>

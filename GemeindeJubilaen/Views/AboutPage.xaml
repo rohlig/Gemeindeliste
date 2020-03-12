@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GemeindeJubiläen.Views.AboutPage"
-             xmlns:vm="clr-namespace:GemeindeJubiläen.ViewModels"
+             x:Class="Gemeindeliste.Views.AboutPage"
+             xmlns:vm="clr-namespace:Gemeindeliste.ViewModels"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
@@ -30,7 +30,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="GemeindeJubiläen" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="Gemeindeliste" FontAttributes="Bold" FontSize="22" />
                                 <Span Text=" " />
                                 <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
                             </FormattedString.Spans>

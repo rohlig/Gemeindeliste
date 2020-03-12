@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="GemeindeJubiläen.UWP.App"
+    x:Class="Gemeindeliste.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:GemeindeJubiläen.UWP"
+    xmlns:local="using:Gemeindeliste.UWP"
     RequestedTheme="Light">
 
 </Application>

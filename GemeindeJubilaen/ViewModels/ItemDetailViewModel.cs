@@ -1,6 +1,6 @@
-﻿using GemeindeJubiläen.Models;
+﻿using Gemeindeliste.Models;
 
-namespace GemeindeJubiläen.ViewModels
+namespace Gemeindeliste.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {

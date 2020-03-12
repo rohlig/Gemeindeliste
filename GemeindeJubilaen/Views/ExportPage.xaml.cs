@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using GemeindeJubiläen.Models;
+using Gemeindeliste.Models;
 using GemeindeJubilaen.Services;
-using GemeindeJubiläen.Services;
+using Gemeindeliste.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-namespace GemeindeJubiläen.Views
+namespace Gemeindeliste.Views
 {
     [DesignTimeVisible(false)]
     public partial class ExportPage : ContentPage

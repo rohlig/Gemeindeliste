@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:Behaviors="clr-namespace:LocalDatabaseSample.Behaviors"
              mc:Ignorable="d"
-             x:Class="GemeindeJubiläen.Views.MonthView"
+             x:Class="Gemeindeliste.Views.MonthView"
              Title="Monatsübersicht"
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>

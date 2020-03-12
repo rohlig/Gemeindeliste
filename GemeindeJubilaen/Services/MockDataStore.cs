@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GemeindeJubiläen.Models;
+using Gemeindeliste.Models;
 
-namespace GemeindeJubiläen.Services
+namespace Gemeindeliste.Services
 {
     public class MockDataStore : IDataStore<Item>
     {

@@ -4,8 +4,8 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
-            xmlns:views="clr-namespace:GemeindeJubiläen.Views"
-            x:Class="GemeindeJubiläen.Views.MainPage">
+            xmlns:views="clr-namespace:Gemeindeliste.Views"
+            x:Class="Gemeindeliste.Views.MainPage">
 
     <TabbedPage.Children>
         <NavigationPage Title="Monatsübersicht">

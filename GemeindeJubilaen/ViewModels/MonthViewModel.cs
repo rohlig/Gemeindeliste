@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-using GemeindeJubiläen.Models;
-using GemeindeJubiläen.Views;
+using Gemeindeliste.Models;
+using Gemeindeliste.Views;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GemeindeJubiläen.ViewModels
+namespace Gemeindeliste.ViewModels
 {
     public class MonthViewModel : BaseViewModel
     {

@@ -1,4 +1,4 @@
-﻿using GemeindeJubiläen.Models;
+﻿using Gemeindeliste.Models;
 using Plugin.FilePicker;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GemeindeJubiläen.Views
+namespace Gemeindeliste.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

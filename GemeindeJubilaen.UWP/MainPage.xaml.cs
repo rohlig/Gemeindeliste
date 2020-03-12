@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace GemeindeJubiläen.UWP
+namespace Gemeindeliste.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace GemeindeJubiläen.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new GemeindeJubiläen.App());
+            LoadApplication(new Gemeindeliste.App());
         }
     }
 }
