@@ -1,6 +1,4 @@
-﻿using System;
-
-using GemeindeJubiläen.Models;
+﻿using GemeindeJubiläen.Models;
 
 namespace GemeindeJubiläen.ViewModels
 {

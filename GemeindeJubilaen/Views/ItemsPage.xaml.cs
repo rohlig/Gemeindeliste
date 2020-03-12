@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
 using GemeindeJubiläen.Models;
-using GemeindeJubiläen.Views;
 using GemeindeJubiläen.ViewModels;
 
 namespace GemeindeJubiläen.Views
@@ -104,7 +98,7 @@ namespace GemeindeJubiläen.Views
 
         private void StatusClicked(object sender, EventArgs e)
         {
-            viewModel.newItem.Gemeindeglied = !viewModel.newItem.Gemeindeglied;
+            viewModel.newItem.realStatus = (Status)(((int)viewModel.newItem.realStatus + 1) % Enum.GetValues(typeof(Status)).Length); ;
             NewGemeindeglied.Text = viewModel.newItem.Status;
         }
     }

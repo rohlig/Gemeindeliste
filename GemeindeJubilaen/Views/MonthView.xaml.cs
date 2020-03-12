@@ -1,44 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using GemeindeJubiläen.Models;
-using GemeindeJubiläen.Views;
 using GemeindeJubiläen.ViewModels;
+using GemeindeJubilaen.Services;
+using Xamarin.Essentials;
+using System.IO;
 
 namespace GemeindeJubiläen.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
 
-    [DesignTimeVisible(false)]
+    public enum Monate
+    {
+        Januar,
+        Februar,
+        März,
+        April,
+        Mai,
+        Juni,
+        Juli,
+        August,
+        September,
+        Oktober,
+        November,
+        Dezember
+    }
     public partial class MonthView : ContentPage
     {
-        enum Monate
-        {
-            Januar,
-            Februar,
-            März,
-            April,
-            Mai,
-            Juni,
-            Juli,
-            August,
-            September,
-            Oktober,
-            November,
-            Dezember
-        }
+       
         MonthViewModel viewModel;
         public MonthView()
         {
             InitializeComponent();
             BindingContext = viewModel = new MonthViewModel();
-            viewModel.Month = DateTime.Now.Month - 1;
+            viewModel.Month = (Monate)(DateTime.Now.Month - 1);
             Monatsname.Text = ((Monate)viewModel.Month).ToString();
             reloadInTime(2000);
         }
@@ -71,16 +68,26 @@ namespace GemeindeJubiläen.Views
         private async void Previous_Clicked(object sender, EventArgs e)
         {
             viewModel.Month = (viewModel.Month - 1);
-            if (viewModel.Month == -1) viewModel.Month = 11;
-            Monatsname.Text = ((Monate)viewModel.Month).ToString();
+            if ((int)viewModel.Month == -1) viewModel.Month = Monate.Dezember;
+            Monatsname.Text = viewModel.Month.ToString();
             await viewModel.ExecuteLoadItemsCommand();
         }
 
         private async void Next_Clicked(object sender, EventArgs e)
         {
-            viewModel.Month = (viewModel.Month + 1) % 12;
+            viewModel.Month = (Monate)(((int)viewModel.Month + 1) % 12);
             Monatsname.Text = ((Monate)viewModel.Month).ToString();
             await viewModel.ExecuteLoadItemsCommand();
+        }
+
+        private async void Export_Clicked(object sender, EventArgs e)
+        {
+            FileInfo file = new PDFExport().ExportMonthAsPDF(viewModel.Geburtstagskinder.ToList(), viewModel.Taufkinder.ToList(), viewModel.Month) ;
+            
+            await Launcher.OpenAsync(new OpenFileRequest
+            {
+                File = new ReadOnlyFile(file.FullName)
+            });
         }
     }
 }

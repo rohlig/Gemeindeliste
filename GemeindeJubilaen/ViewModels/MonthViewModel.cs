@@ -19,7 +19,7 @@ namespace GemeindeJubiläen.ViewModels
         public ObservableCollection<Item> Geburtstagskinder { get; set; } = new ObservableCollection<Item>();
         public ObservableCollection<Item> Taufkinder { get; set; } = new ObservableCollection<Item>();
         public Command LoadItemsCommand { get; set; }
-        public int Month = 1;
+        public Monate Month = Monate.Januar;
         public MonthViewModel()
         {
             Title = "Browse";
@@ -44,8 +44,8 @@ namespace GemeindeJubiläen.ViewModels
                 {
                     tempList.Add(item);
                 }
-                var gebJub = tempList.FindAll(x => x.Geburtsdatum.Length == 10 && x.Geb.Month == Month+1).OrderBy(x => x.Geb.Day);
-                var taufJub = tempList.FindAll(x => x.Taufdatum.Length == 10 && x.Tauf.Month == Month+1).OrderBy(x => x.Tauf.Day);
+                var gebJub = tempList.FindAll(x => x.Geburtsdatum.Length == 10 && x.Geb.Month == (int)Month+1).OrderBy(x => x.Geb.Day);
+                var taufJub = tempList.FindAll(x => x.Taufdatum.Length == 10 && x.Tauf.Month == (int)Month+1).OrderBy(x => x.Tauf.Day);
                 foreach(var v in gebJub)
                 {
                     Geburtstagskinder.Add(v);

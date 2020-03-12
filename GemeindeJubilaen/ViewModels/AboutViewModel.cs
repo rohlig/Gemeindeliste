@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Windows.Input;
-
-using Xamarin.Forms;
 
 namespace GemeindeJubiläen.ViewModels
 {
@@ -10,7 +7,7 @@ namespace GemeindeJubiläen.ViewModels
         public String Pfad { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public AboutViewModel()
         {
-            Title = "Import/Export";
+            Title = "About";
         }
     }
 }

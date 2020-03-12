@@ -2,11 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 using GemeindeJubiläen.Models;
-using GemeindeJubiläen.Views;
 using System.Collections.Generic;
 using System.Linq;
 
