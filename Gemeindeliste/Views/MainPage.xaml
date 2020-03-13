@@ -6,7 +6,6 @@
             mc:Ignorable="d"
             xmlns:views="clr-namespace:Gemeindeliste.Views"
             x:Class="Gemeindeliste.Views.MainPage">
-
     <TabbedPage.Children>
         <NavigationPage Title="Monatsübersicht">
             <NavigationPage.Icon>

@@ -13,6 +13,7 @@ namespace Gemeindeliste.Views
     [DesignTimeVisible(false)]
     public partial class ExportPage : ContentPage
     {
+        
         private List<Button> buttonList;
         public ExportPage()
         {
@@ -23,7 +24,6 @@ namespace Gemeindeliste.Views
                 Button b = new Button();
                 b.Text = ((Monate)(i)).ToString();
                 b.Clicked += Button_Clicked;
-                b.FontSize = 18;
                 MonatsGrid.Children.Add(b, i / 3, i % 3);
                 buttonList.Add(b);
             }
@@ -33,7 +33,6 @@ namespace Gemeindeliste.Views
                 b.Text = ((Status)(i)).ToString();
                 b.Clicked += Button_Clicked;
                 b.BackgroundColor = Color.LightGreen;
-                b.FontSize = 18;
                 StatusGrid.Children.Add(b, i % 4, i / 4);
                 buttonList.Add(b);
             }

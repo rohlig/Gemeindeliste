@@ -10,19 +10,19 @@
         <ToolbarItem Text="hidden Aboutpage :)" Clicked="About_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Padding="10,10,10,10">
-            <Label Text="Export" FontSize="Header" HorizontalOptions="Center"/>
+        <StackLayout Padding="5,5,10,10">
+            <Label Text="Export" FontSize="Subtitle" HorizontalOptions="Center"/>
             <Grid BackgroundColor="LightGray" ColumnSpacing="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="MonatsButton" Text="Monatsexport" Clicked="ExportArt_Clicked" BackgroundColor="LightGreen" FontSize="Large"/>
-                <Button x:Name="GemVorButton" Text="Gemeindeliste Vorname" Clicked="ExportArt_Clicked" Grid.Column="1" FontSize="Large"/>
-                <Button x:Name="GemNachButton" Text="Gemeindeliste Nachname" Clicked="ExportArt_Clicked" Grid.Column="2" FontSize="Large"/>
+                <Button x:Name="MonatsButton" Text="Monatsexport" Clicked="ExportArt_Clicked" BackgroundColor="LightGreen" FontSize="Small"/>
+                <Button x:Name="GemVorButton" Text="Gemeindeliste Vorname" Clicked="ExportArt_Clicked" Grid.Column="1" FontSize="Small"/>
+                <Button x:Name="GemNachButton" Text="Gemeindeliste Nachname" Clicked="ExportArt_Clicked" Grid.Column="2" FontSize="Small"/>
             </Grid>
-            <Label Text="Status" FontSize="Header" HorizontalOptions="Center"/>
+            <Label Text="Status" FontSize="Subtitle" HorizontalOptions="Center"/>
             <Grid x:Name="StatusGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -32,22 +32,20 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
             </Grid>
-            <Label x:Name="InhaltsLabel" Text="Inhalt" FontSize="Header" HorizontalOptions="Center"/>
+            <Label x:Name="InhaltsLabel" Text="Inhalt" FontSize="Subtitle" HorizontalOptions="Center"/>
             <Grid>
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="BeidButton" Text="Tauf und Geburtstage" Clicked="InhaltButton_Clicked" BackgroundColor="LightGreen" FontSize="Large"/>
-                <Button x:Name="GebButton" Text="nur Geburtstage" Clicked="InhaltButton_Clicked" Grid.Column="1" FontSize="Large"/>
-                <Button x:Name="TaufButton" Text="nur Tauftage" Clicked="InhaltButton_Clicked" Grid.Column="2" FontSize="Large"/>
+                <Button x:Name="BeidButton" Text="Tauf und Geburtstage" Clicked="InhaltButton_Clicked" BackgroundColor="LightGreen" VerticalOptions="FillAndExpand"/>
+                <Button x:Name="GebButton" Text="nur Geburtstage" Clicked="InhaltButton_Clicked" Grid.Column="1" VerticalOptions="FillAndExpand"/>
+                <Button x:Name="TaufButton" Text="nur Tauftage" Clicked="InhaltButton_Clicked" Grid.Column="2" VerticalOptions="FillAndExpand"/>
             </Grid>
-            <Label x:Name="MonatsLabel" Text="Monate" FontSize="Header" HorizontalOptions="Center"/>
+            <Label x:Name="MonatsLabel" Text="Monate" FontSize="Subtitle"  HorizontalOptions="Center"/>
             <Grid x:Name="MonatsGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -61,7 +59,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
             </Grid>
-            <Button Text="PDF Erstellen" FontSize="40" BackgroundColor="Gold" Clicked="Create_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+            <Button Text="PDF Erstellen" FontSize="Medium" BackgroundColor="Gold" Clicked="Create_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

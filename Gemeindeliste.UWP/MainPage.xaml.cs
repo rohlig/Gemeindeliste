@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,7 +21,7 @@ namespace Gemeindeliste.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size { Height = 1000, Width = 1500 });
             LoadApplication(new Gemeindeliste.App());
         }
     }

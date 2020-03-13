@@ -137,7 +137,7 @@ namespace GemeindeJubilaen.Services
                         table.AddCell(cell);
 
                         cell = new Cell().SetVerticalAlignment(VerticalAlignment.MIDDLE).SetBackgroundColor(ColorConstants.LIGHT_GRAY);
-                        cell.Add(new Paragraph((i == 0) ? "Geburtstag" : "Taufjubiläum").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER).SetFontSize(12f));
+                        cell.Add(new Paragraph((i == 0) ? "Geburtstag" : "Taufdatum").SetFont(boldFont).SetTextAlignment(TextAlignment.CENTER).SetFontSize(12f));
                         table.AddCell(cell);
 
                         cell = new Cell().SetVerticalAlignment(VerticalAlignment.MIDDLE).SetBackgroundColor(ColorConstants.LIGHT_GRAY);
